@@ -1,0 +1,19 @@
+{
+    "name": "p.pronyuk/dz46",
+    "description": "Home work of 4.6 module",
+    "require": {
+        "symfony/console": "^5.0"
+    },
+    "authors": [
+        {
+            "name": "Petr Pronyuk",
+            "email": "p.pronyuk@gmail.com"
+        }],
+
+    "autoload":{
+		"psr-4":{
+			"App\\": "src/"
+		}
+	}	
+    
+}
