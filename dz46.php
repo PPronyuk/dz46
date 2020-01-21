@@ -10,6 +10,7 @@ use Symfony\Component\Console\Application;
 $application = new Application();
 
 $application->add(new App\Command\ShowMsg());
+$application->add(new App\Command\ShowMsgTimes());
 
 $application->run();
 
