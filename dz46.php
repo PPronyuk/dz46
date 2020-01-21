@@ -11,6 +11,7 @@ $application = new Application();
 
 $application->add(new App\Command\ShowMsg());
 $application->add(new App\Command\ShowMsgTimes());
+$application->add(new \App\Command\ShowUserInfo());
 
 $application->run();
 
