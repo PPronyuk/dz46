@@ -24,37 +24,29 @@ class ShowUserInfo extends Command
     {
         $helper = $this->getHelper('question');
 
-        $name = '';
         $question = new Question('Введите Ваше имя: ', false);
 
-        while (! $name = $helper->ask($input, $output, $question));  
+        while (! $name = $helper->ask($input, $output, $question)); 
 
-        $age = 0;
+
         $question = new Question('Введите Ваш возраст: ', 0);
-
         $question->setValidator(function ($answer) {
             if (! $answer || ! preg_match("/^[0-9]+$/", $answer)) {
                 throw new \RuntimeException('Возраст должен быть числом больше 0.');
             }
 
-            return $answer;
-        });
+            return $answer; });
 
         $age = $helper->ask($input, $output, $question);
 
-        $gender = '';
-        $question = new ChoiceQuestion(
-            'Выберите Ваш пол: ',
-            ['М', 'Ж'],
-            'М'
-        );
+
+        $question = new ChoiceQuestion( 'Выберите Ваш пол: ', ['М', 'Ж'], 'М');
         $question->setErrorMessage('Несуществующее значение.');
 
         $gender = $helper->ask($input, $output, $question);
 
 
         $output->writeln("Здравствуйте, $name. Ваш возраст $age. Ваш пол $gender.");
-         
 
         return 0;
     }
